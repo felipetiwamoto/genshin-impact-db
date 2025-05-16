@@ -1,0 +1,59 @@
+<div class="filter">
+	<ul class="element">
+		<li class="element__item {{ hasElement('ANEMO') ? 'active' : '' }}" (click)="setElements('ANEMO')">ANEMO</li>
+		<li class="element__item {{ hasElement('GEO') ? 'active' : '' }}" (click)="setElements('GEO')">GEO</li>
+		<li class="element__item {{ hasElement('ELECTRO') ? 'active' : '' }}" (click)="setElements('ELECTRO')">ELECTRO
+		</li>
+		<li class="element__item {{ hasElement('DENDRO') ? 'active' : '' }}" (click)="setElements('DENDRO')">DENDRO</li>
+		<li class="element__item {{ hasElement('HYDRO') ? 'active' : '' }}" (click)="setElements('HYDRO')">HYDRO</li>
+		<li class="element__item {{ hasElement('PYRO') ? 'active' : '' }}" (click)="setElements('PYRO')">PYRO</li>
+		<li class="element__item {{ hasElement('CRYO') ? 'active' : '' }}" (click)="setElements('CRYO')">CRYO</li>
+	</ul>
+	<ul class="star">
+		<li class="star__item {{ hasStar(4) ? 'active' : '' }}" (click)="setStars(4)">4</li>
+		<li class="star__item {{ hasStar(5) ? 'active' : '' }}" (click)="setStars(5)">5</li>
+	</ul>
+	<ul class="weapon">
+		<li class="weapon__item {{ hasWeapon('SWORD') ? 'active' : '' }}" (click)="setWeapons('SWORD')">SWORD</li>
+		<li class="weapon__item {{ hasWeapon('POLEARM') ? 'active' : '' }}" (click)="setWeapons('POLEARM')">POLEARM</li>
+		<li class="weapon__item {{ hasWeapon('CATALYST') ? 'active' : '' }}" (click)="setWeapons('CATALYST')">CATALYST
+		</li>
+		<li class="weapon__item {{ hasWeapon('CLAYMORE') ? 'active' : '' }}" (click)="setWeapons('CLAYMORE')">CLAYMORE
+		</li>
+		<li class="weapon__item {{ hasWeapon('BOW') ? 'active' : '' }}" (click)="setWeapons('BOW')">BOW</li>
+	</ul>
+	<ul class="nation">
+		<li class="nation__item {{ hasNation('MONDSTADT') ? 'active' : '' }}" (click)="setNations('MONDSTADT')">
+			MONDSTADT</li>
+		<li class="nation__item {{ hasNation('LIYUE') ? 'active' : '' }}" (click)="setNations('LIYUE')">LIYUE</li>
+		<li class="nation__item {{ hasNation('INAZUMA') ? 'active' : '' }}" (click)="setNations('INAZUMA')">INAZUMA</li>
+		<li class="nation__item {{ hasNation('SUMERU') ? 'active' : '' }}" (click)="setNations('SUMERU')">SUMERU</li>
+		<li class="nation__item {{ hasNation('FONTAINE') ? 'active' : '' }}" (click)="setNations('FONTAINE')">FONTAINE
+		</li>
+		<li class="nation__item {{ hasNation('NATLAN') ? 'active' : '' }}" (click)="setNations('NATLAN')">NATLAN</li>
+	</ul>
+	<ul class="gender">
+		<li class="gender__item {{ hasGender('M') ? 'active' : '' }}" (click)="setGenders('M')">M</li>
+		<li class="gender__item {{ hasGender('F') ? 'active' : '' }}" (click)="setGenders('F')">F</li>
+		<li class="gender__item {{ hasGender('N/A') ? 'active' : '' }}" (click)="setGenders('N/A')">N/A</li>
+	</ul>
+	<ul class="model">
+		<li class="model__item {{ hasModel('CHILD') ? 'active' : '' }}" (click)="setModels('CHILD')">CHILD</li>
+		<li class="model__item {{ hasModel('YOUNG') ? 'active' : '' }}" (click)="setModels('YOUNG')">YOUNG</li>
+		<li class="model__item {{ hasModel('ADULT') ? 'active' : '' }}" (click)="setModels('ADULT')">ADULT</li>
+	</ul>
+</div>
+
+<ul class="character">
+	@for(item of filteredCharacters; track $index){
+	<li class="character__item">
+		<span class="character__star">{{ item.star }}</span>
+		<span class="character__name">{{ item.name }}</span>
+		<span class="character__element">{{ item.element }}</span>
+		<span class="character__weapon">{{ item.weapon }}</span>
+		<span class="character__nation">{{ item.nation }}</span>
+		<span class="character__nation">{{ item.gender }}</span>
+		<span class="character__nation">{{ item.model }}</span>
+	</li>
+	}
+</ul>
